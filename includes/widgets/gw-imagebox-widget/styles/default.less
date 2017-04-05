@@ -1,0 +1,107 @@
+@size_mobile: default;
+@size_tablet: default;
+@size_desktop: default;
+@backgroundcolor: transparent;
+@bgcolor-box: transparent;
+@color: default;
+@break_point_mobile: default;
+@break_point_tablet: default;
+
+.gw-contentbox-wrapper {
+	position: relative;
+	height: @size_mobile;
+	background-color: @backgroundcolor;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center; /* Safari 7.0+ */
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+
+	.gw-contentbox-image-wrapper {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		> a {
+			height: 100%;
+		    width: 100%;
+		    position: absolute;
+		}
+
+		.gw-contentbox-image {
+		    background-size: cover;
+		    height: 100%;
+		    width: 100%;
+		    position: absolute;
+		    background-position: center center;
+			-webkit-transition: all 0.4s ease;
+			-moz-transition: all 0.4s ease;
+			-ms-transition: all 0.4s ease;
+			-o-transition: all 0.4s ease;
+			transition: all 0.4s ease;
+		}
+	}
+
+	.gw-contentbox-content {
+		background-color: @bgcolor-box;
+		color: @color;
+		padding: 15px;
+		max-width: 66.66%;
+		z-index: 50;
+
+		&.leftbottom {
+			position: absolute;
+			left: 15px;
+			bottom: 15px;
+		}		
+
+		&.rightbottom {
+			position: absolute;
+			right: 15px;
+			bottom: 15px;
+		}
+
+		&.righttop {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+		}
+
+		&.lefttop {
+			position: absolute;
+			left: 15px;
+			top: 15px;
+		}
+
+	}
+
+	&:hover {
+		.gw-contentbox-image-wrapper {
+			.gw-contentbox-image {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+				backface-visibility: hidden;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: @break_point_mobile) {
+	.gw-contentbox-wrapper {
+		height: @size_tablet;
+	}
+}
+
+@media screen and (min-width: @break_point_tablet) {
+	.gw-contentbox-wrapper {
+		height: @size_desktop;
+	}
+}
