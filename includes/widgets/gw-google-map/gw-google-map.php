@@ -13,8 +13,7 @@ class GWSOB_gmap_Widget extends SiteOrigin_Widget {
 
     function __construct() {
         parent::__construct(
-            'gwsob-gmap',
-            __('Countdown (GW)', 'gw-so-bundle'),
+            'gwsob-gmap', __('Google Map (GW)', 'gw-so-bundle'),
             array(
                 'description' => __('A Google Map widget.', 'gw-so-bundle'),
                 'help'        => 'https://siteorigin.com/widgets-bundle/google-maps-widget/',
