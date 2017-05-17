@@ -161,12 +161,16 @@ sowb.SiteOriginGoogleMap = function($) {
 					function (mrkr) {
 						var geocodeMarker = function () {
 							this.getLocation( mrkr.place ).done( function( location ) {
+								var mrkerIcon = options.markerIcon;
+								if(mrkr.custom_marker_icon) {
+									mrkerIcon = mrkr.custom_marker_icon;
+								}
 
 								var marker = new google.maps.Marker({
 									position: location,
 									map: map,
 									draggable: options.markersDraggable,
-									icon: options.markerIcon,
+									icon: mrkerIcon,
 									title: ''
 								});
 
